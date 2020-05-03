@@ -1,0 +1,25 @@
+<div class="main">
+	<div class="main-width">
+		<div class="header">
+			<ul>
+				<li [routerLink]="['/']">HOME</li>
+				<li [routerLink]="['/fonts/']">FONTS</li>
+				<li [routerLink]="['/color/']">COLOR</li>
+				<li>SMTH</li>
+			</ul>
+
+		</div>
+
+		<div class="content">
+			<router-outlet></router-outlet>	
+		</div>
+
+<!-- 		<div class="footer" style="margin-top: 50px;">
+
+			<ul class="copyright">
+				<li>&copy; Untitled. All rights reserved.</li>
+			</ul>
+
+		</div> -->
+	</div>
+</div>

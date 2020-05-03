@@ -1,0 +1,59 @@
+<div class="work-area">
+	<div class="name">
+		Color converter
+	</div>
+	<div class="converter" style="margin-top: 50px;">
+		<div class="input-menu">
+			<div class="choice">
+				<div [ngStyle]="{ 'color': toggle ? '#414141' : '#00BFFF' }" (click)="toggle = false">RGB</div>
+				<div></div>
+				<div [ngStyle]="{ 'color': !toggle ? '#414141' : '#00BFFF' }" (click)="toggle = true">HEX</div>
+			</div>
+			<div class="hex" *ngIf="toggle">
+				<input type="text" class="form" maxlength="6" placeholder="000000" [(ngModel)]="hex" (ngModelChange)="changeHex()">
+			</div>
+			<div class="rgb" *ngIf="!toggle">
+				<div style="color: red;"><div>R</div>
+					<input  type="range" min="0" max="255" step="1" [(ngModel)]="rgb_1" (ngModelChange)="changeRba()"> 
+				</div>
+				<div style="color: green;"><div>G</div>
+					<input  type="range" min="0" max="255" step="1" [(ngModel)]="rgb_2" (ngModelChange)="changeRba()"> 
+				</div>
+				<div style="color: blue;"><div>B</div>
+					<input type="range" min="0" max="255" step="1" [(ngModel)]="rgb_3" (ngModelChange)="changeRba()"> 
+				</div>
+				<div>
+					<div style="color: red;"><div>R</div>
+						<input type="number" min="0" max="255" class="form" placeholder="12313" [(ngModel)]="rgb_1" (ngModelChange)="changeRba()">
+					</div>
+					<div style="color: green;"><div>G</div>
+						<input type="number" min="0" max="255" class="form" placeholder="12313" [(ngModel)]="rgb_2" (ngModelChange)="changeRba()">
+					</div>
+					<div style="color: blue;"><div>B</div>
+						<input type="number" min="0" max="255" class="form" placeholder="12313" [(ngModel)]="rgb_3" (ngModelChange)="changeRba()">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="box-menu">
+			<div [ngStyle]="{'background': color}"></div>
+		</div>
+	</div>
+	<div class="view-color" style="margin-top: 60px;">
+		<ul>
+			<li class="nee">HEX</li>
+			<li class="nee">RGB</li>
+			<li class="ee">RGBA</li>
+			<li class="ee">% RGB</li>
+		</ul>
+	</div>
+	<div class="view-color-2">
+		<ul>
+			<li>#{{hex}}</li>
+			<li>({{rgb_1}},{{rgb_2}},{{rgb_3}})</li>
+			<li>({{rgb_1}},{{rgb_2}},{{rgb_3}},1)</li>
+			<li>({{rgb_1}}%,{{rgb_2}}%,{{rgb_3}}%)</li>
+		</ul>
+	</div>
+	
+</div>

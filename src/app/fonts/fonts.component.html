@@ -1,0 +1,32 @@
+
+
+
+<div class="work-area">
+
+	<div class="input-area">
+		<input class="form" placeholder="Search" [(ngModel)]="searchText">
+		<input class="form" placeholder="Type something" [(ngModel)]="type_smth" (ngModelChange)="change()">
+<!-- 		<mat-select placeholder="Номер"
+               style="margin-bottom: 0; height: 38px;" [(ngModel)]="order">
+		    <mat-option [value]="qwe">
+		                  {{item.id}}
+		    </mat-option>
+    	</mat-select> -->
+	</div>
+
+	<div class="list-items">
+
+		<ul>
+			<li *ngFor="let font of fonts; let i = index" [hidden]="!font.family.startsWith(searchText)" (click)="view_font(font)" [routerLink]="['/font/', font.family ]">
+				<div>{{font.family}}</div>
+				<div>Styles: {{font.variants.length}}</div>
+				<div></div>
+				<div [ngStyle]="{'font-family': font.family}">{{ example}}</div>
+			</li>
+		</ul>
+	</div>
+
+</div>
+<!-- <div *ngFor="let font of fonts; let i = index">
+	@import url('https://fonts.googleapis.com/css?family={{font.family}}:100,200,300,400,500,600,700,800,900');
+</div> -->

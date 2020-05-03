@@ -1,0 +1,127 @@
+<div class="work-area">
+
+	<div class="name">
+		{{font.family}}
+	</div>
+
+	<div class="info">
+		<div class="view">
+			<div class="logo">
+				&lt;link&gt;
+			</div>
+			<div class="body">
+
+				&lt;link href="https://fonts.googleapis.com/css2?family={{font.family}}:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+			</div>
+		</div>
+		<div class="view">
+			<div class="logo">
+				@import
+			</div>
+			<div class="body">
+
+				&lt;style&gt;
+				@import url('https://fonts.googleapis.com/css2?family={{font.family}}:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+				&lt;/style&gt;
+			</div>
+		</div>
+	</div>
+
+	<div class="file-logo">
+		<div class="line">Family</div>
+		<div class="line">Example</div>
+		<div class="line"><a>Download</a></div>
+	</div>
+	<div *ngIf="font.files[100]" class="file">
+		<div>Thin 100</div>
+		<div style="font-weight: 100;" [ngStyle]="{'font-family': font.family}">Yesterday, all my troubles seemed so far away.</div>
+		<div><a href="{{font.files[100]}}" download>Click here</a></div>
+	</div>
+	<div *ngIf="font.files['100italic']" class="file">
+		<div>Thin 100 italic</div>
+		<div [ngStyle]="{'font-family': font.family}" style="font-weight: 100; font-style: italic;">Yesterday, all my troubles seemed so far away.</div>
+		<div><a href="{{font.files['100italic']}}" download>Click here</a></div>
+	</div>
+	<div *ngIf="font.files[200]" class="file">
+		<div>Extra-light 200</div>
+		<div [ngStyle]="{'font-family': font.family}" style="font-weight: 200;">Yesterday, all my troubles seemed so far away.</div>
+		<div><a href="{{font.files[200]}}" download>Click here</a></div>
+	</div>
+	<div *ngIf="font.files['200italic']" class="file">
+		<div>Extra-light 200 italic</div>
+		<div [ngStyle]="{'font-family': font.family}" style="font-weight: 200; font-style: italic;">Yesterday, all my troubles seemed so far away.</div>
+		<div><a href="{{font.files['200italic']}}" download>Click here</a></div>
+	</div>
+	<div *ngIf="font.files[300]" class="file">
+		<div>Light 300</div>
+		<div [ngStyle]="{'font-family': font.family}" style="font-weight: 300;">Yesterday, all my troubles seemed so far away.</div>
+		<div><a href="{{font.files[300]}}" download>Click here</a></div>
+	</div>
+	<div *ngIf="font.files['300italic']" class="file">
+		<div>Light 300 italic</div>
+		<div [ngStyle]="{'font-family': font.family}" style="font-weight: 300; font-style: italic;">Yesterday, all my troubles seemed so far away.</div>
+		<div><a href="{{font.files['300italic']}}" download>Click here</a></div>
+	</div>
+	<div *ngIf="font.files.regular" class="file">
+		<div>Regular 400</div>
+		<div [ngStyle]="{'font-family': font.family}" style="font-weight: 400;">Yesterday, all my troubles seemed so far away.</div>
+		<div><a href="{{font.files.regular}}" download>Click here</a></div>
+	</div>
+	<div *ngIf="font.files.italic" class="file">
+		<div>Regular 400 italic</div>
+		<div [ngStyle]="{'font-family': font.family}" style="font-weight: 400; font-style: italic;">Yesterday, all my troubles seemed so far away.</div>
+		<div><a href="{{font.files.italic}}" download>Click here</a></div>
+	</div>
+	<div *ngIf="font.files[500]" class="file">
+		<div>Medium 500</div>
+		<div [ngStyle]="{'font-family': font.family}" style="font-weight: 500;">Yesterday, all my troubles seemed so far away.</div>
+		<div><a href="{{font.files[500]}}" download>Click here</a></div>
+	</div>
+	<div *ngIf="font.files['500italic']" class="file">
+		<div>Medium 500 italic</div>
+		<div [ngStyle]="{'font-family': font.family}" style="font-weight: 500; font-style: italic;">Yesterday, all my troubles seemed so far away.</div>
+		<div><a href="{{font.files['500italic']}}" download>Click here</a></div>
+	</div>
+	<div *ngIf="font.files[600]" class="file">
+		<div>Semi-bold 600</div>
+		<div [ngStyle]="{'font-family': font.family}" style="font-weight: 600;">Yesterday, all my troubles seemed so far away.</div>
+		<div><a href="{{font.files[600]}}" download>Click here</a></div>
+	</div>
+	<div *ngIf="font.files['600italic']" class="file">
+		<div>Semi-bold 600 italic</div>
+		<div [ngStyle]="{'font-family': font.family}" style="font-weight: 600; font-style: italic;">Yesterday, all my troubles seemed so far away.</div>
+		<div><a href="{{font.files['600italic']}}" download>Click here</a></div>
+	</div>
+	<div *ngIf="font.files[700]" class="file">
+		<div>Bold 700</div>
+		<div [ngStyle]="{'font-family': font.family}" style="font-weight: 700;">Yesterday, all my troubles seemed so far away.</div>
+		<div><a href="{{font.files[700]}}" download>Click here</a></div>
+	</div>
+	<div *ngIf="font.files['700italic']" class="file">
+		<div>Bold 700 italic</div>
+		<div [ngStyle]="{'font-family': font.family}" style="font-weight: 700; font-style: italic;">Yesterday, all my troubles seemed so far away.</div>
+		<div><a href="{{font.files['700italic']}}" download>Click here</a></div>
+	</div>
+	<div *ngIf="font.files[800]" class="file">
+		<div>Extra-bold 800</div>
+		<div [ngStyle]="{'font-family': font.family}" style="font-weight: 800;">Yesterday, all my troubles seemed so far away.</div>
+		<div><a href="{{font.files[800]}}" download>Click here</a></div>
+	</div>
+	<div *ngIf="font.files['800italic']" class="file">
+		<div>Extra-bold 800 italic</div>
+		<div [ngStyle]="{'font-family': font.family}" style="font-weight: 800; font-style: italic;">Yesterday, all my troubles seemed so far away.</div>
+		<div><a href="{{font.files['800italic']}}" download>Click here</a></div>
+	</div>
+	<div *ngIf="font.files[900]" class="file">
+		<div>Black 900</div>
+		<div [ngStyle]="{'font-family': font.family}" style="font-weight: 900;">Yesterday, all my troubles seemed so far away.</div>
+		<div><a href="{{font.files[900]}}" download>Click here</a></div>
+	</div>
+	<div *ngIf="font.files['900italic']" class="file">
+		<div>Black 900 italic</div>
+		<div [ngStyle]="{'font-family': font.family}" style="font-weight: 900; font-style: italic;">Yesterday, all my troubles seemed so far away.</div>
+		<div><a href="{{font.files['900italic']}}" download>Click here</a></div>
+	</div>
+
+
+</div>
