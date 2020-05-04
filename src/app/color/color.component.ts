@@ -16,6 +16,8 @@ export class ColorComponent implements OnInit {
 	rgbp_2: number = 0;
 	rgbp_3: number = 0;
 
+	opacity: number = 1;
+
 	color: string  = '#000000';;
   constructor() { }
 

@@ -2,15 +2,20 @@
 	<div class="name">
 		Color converter
 	</div>
-	<div class="converter" style="margin-top: 50px;">
+	<div class="converter" style="margin-top: 30px;">
 		<div class="input-menu">
 			<div class="choice">
 				<div [ngStyle]="{ 'color': toggle ? '#414141' : '#00BFFF' }" (click)="toggle = false">RGB</div>
 				<div></div>
 				<div [ngStyle]="{ 'color': !toggle ? '#414141' : '#00BFFF' }" (click)="toggle = true">HEX</div>
 			</div>
-			<div class="hex" *ngIf="toggle">
-				<input type="text" class="form" maxlength="6" placeholder="000000" [(ngModel)]="hex" (ngModelChange)="changeHex()">
+			<div class="hex rgb" *ngIf="toggle">
+				<div><div>#</div>
+					<input type="text" class="form" maxlength="6" placeholder="000000" [(ngModel)]="hex" (ngModelChange)="changeHex()">
+				</div>
+				<div><div>O</div>
+					<input  type="range" min="0" max="1" step="0.01" [(ngModel)]="opacity"> 
+				</div>
 			</div>
 			<div class="rgb" *ngIf="!toggle">
 				<div style="color: red;"><div>R</div>
@@ -36,7 +41,7 @@
 			</div>
 		</div>
 		<div class="box-menu">
-			<div [ngStyle]="{'background': color}"></div>
+			<div [ngStyle]="{'background': color, 'opacity': opacity}"></div>
 		</div>
 	</div>
 	<div class="view-color" style="margin-top: 60px;">
@@ -51,7 +56,7 @@
 		<ul>
 			<li>#{{hex}}</li>
 			<li>({{rgb_1}},{{rgb_2}},{{rgb_3}})</li>
-			<li>({{rgb_1}},{{rgb_2}},{{rgb_3}},1)</li>
+			<li>({{rgb_1}},{{rgb_2}},{{rgb_3}},{{opacity}})</li>
 			<li>({{rgb_1}}%,{{rgb_2}}%,{{rgb_3}}%)</li>
 		</ul>
 	</div>
