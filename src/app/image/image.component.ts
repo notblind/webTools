@@ -11,7 +11,7 @@ export class ImageComponent implements OnInit {
 
 	id_image: number;
 	image: any;
-	url: string = 'https://pixabay.com/api/?key=11873174-c12f4530bab32261bf10fb3af&min_width=1280&id=';
+	url: string = 'https://pixabay.com/api/?key=&min_width=1280&id=';
 
   constructor(public router: ActivatedRoute, private fontsService: HttpService) { }
 
