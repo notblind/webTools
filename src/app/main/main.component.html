@@ -1,16 +1,31 @@
-<div class="main">
+
+<div class="main" *ngIf="!toggle">
+	<div (click)="but = !but" class="menu_btn" [ngClass]="{'menu_btn-2': but}"> 
+		<span></span>
+	</div>
+	<div *ngIf="but" class="but-check">
+		<ul class="toggle-menu">
+			<li (click)="but = !but" [routerLink]="['/']">HOME</li>
+			<li (click)="but = !but" [routerLink]="['/fonts/']">FONTS</li>
+			<li (click)="but = !but" [routerLink]="['/images/']">IMAGES</li>
+			<li (click)="but = !but" [routerLink]="['/color/']">COLOR</li>
+			<li class="pal-tel-v" (click)="toggle = true">PALETTE</li>
+		</ul>
+	</div>
 	<div class="main-width">
+		
 		<div class="header">
 			<ul>
 				<li [routerLink]="['/']">HOME</li>
 				<li [routerLink]="['/fonts/']">FONTS</li>
+				<li [routerLink]="['/images/']">IMAGES</li>
 				<li [routerLink]="['/color/']">COLOR</li>
-				<li>SMTH</li>
+				<li class="pal-tel-v" (click)="toggle = true">PALETTE</li>
 			</ul>
 			<div class="copyright">&copy; All rights reserved.</div>
 		</div>
 
-		<div class="content">
+		<div class="content" style="margin-top: 10px;">
 			<router-outlet></router-outlet>	
 		</div>
 
@@ -21,5 +36,62 @@
 			</ul>
 
 		</div> -->
+	</div>
+</div>
+<div class = "palette" *ngIf="toggle">
+	<div [ngStyle]="{ 'background': color_1 }">
+		<div style="width: 50%;" class="button-pal" *ngIf="step == 'first'">
+			<div style="color: white" (click)="toggle = false">Close</div>
+			<div style="color: #E53079" (click)="color_1 = new_color()">Dislike</div>
+			<div style="color: #59D780" (click)="step = 'second'">Like</div>
+		</div>
+		<div style="width: 90%;" class="button-pal" *ngIf="step != 'first'">
+			<div style="color: white">{{color_1}}</div>
+			<div style="color: white">Remove</div>
+		</div>
+	</div>
+	<div [ngStyle]="{ 'background': color_2 }" *ngIf="step == 'second' || step == 'third' || step == 'fourth' || step == 'fifth'">
+		<div class="button-pal" *ngIf="step == 'second'">
+			<div style="color: white" (click)="toggle = false">Close</div>
+			<div style="color: #E53079" (click)="color_2 = new_color()">Dislike</div>
+			<div style="color: #59D780" (click)="step = 'third'">Like</div>
+		</div>
+		<div style="width: 90%;" class="button-pal" *ngIf="step != 'second'">
+			<div style="color: white">{{color_2}}</div>
+			<div style="color: white">Remove</div>
+		</div>
+	</div>
+	<div [ngStyle]="{ 'background': color_3 }" *ngIf="step == 'third' || step == 'fourth' || step == 'fifth'">
+		<div class="button-pal" *ngIf="step == 'third'">
+			<div style="color: white" (click)="toggle = false">Close</div>
+			<div style="color: #E53079" (click)="color_3 = new_color()">Dislike</div>
+			<div style="color: #59D780" (click)="step = 'fourth'">Like</div>
+		</div>
+		<div style="width: 90%;" class="button-pal" *ngIf="step != 'third'">
+			<div style="color: white">{{color_3}}</div>
+			<div style="color: white">Remove</div>
+		</div>
+	</div>
+	<div [ngStyle]="{ 'background': color_4 }" *ngIf="step == 'fourth' || step == 'fifth'">
+		<div class="button-pal" *ngIf="step == 'fourth'">
+			<div style="color: white" (click)="toggle = false">Close</div>
+			<div style="color: #E53079" (click)="color_4 = new_color()">Dislike</div>
+			<div style="color: #59D780" (click)="step = 'fifth'">Like</div>
+		</div>
+		<div style="width: 90%;" class="button-pal" *ngIf="step != 'fourth'">
+			<div style="color: white">{{color_4}}</div>
+			<div style="color: white">Remove</div>
+		</div>
+	</div>
+	<div [ngStyle]="{ 'background': color_5 }" *ngIf="step == 'fifth'">
+		<div class="button-pal" *ngIf="step == 'fifth'">
+			<div style="color: white" (click)="toggle = false">Close</div>
+			<div style="color: #E53079" (click)="color_5 = new_color()">Dislike</div>
+			<div style="color: white">Remove</div>
+		</div>
+		<div style="width: 90%;" class="button-pal" *ngIf="step != 'fifth'">
+			<div style="color: white">{{color_5}}</div>
+			<div style="color: white">Remove</div>
+		</div>
 	</div>
 </div>

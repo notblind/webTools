@@ -2,7 +2,10 @@
 	<div class="name">
 		Color converter
 	</div>
-	<div class="converter" style="margin-top: 30px;">
+	<div style="max-width: 50%; margin-top: 5px; text-align: justify" class="text-sp">
+		Hex numbers are used to specify colors. The hexadecimal system, in contrast to the decimal system, is based, as its name implies, on the number 16. Using the universal color converter, you can easily convert a color from one color model to a number of others.
+	</div>
+	<div class="converter" style="margin-top: 20px;">
 		<div class="input-menu">
 			<div class="choice">
 				<div [ngStyle]="{ 'color': toggle ? '#414141' : '#00BFFF' }" (click)="toggle = false">RGB</div>
@@ -27,15 +30,15 @@
 				<div style="color: blue;"><div>B</div>
 					<input type="range" min="0" max="255" step="1" [(ngModel)]="rgb_3" (ngModelChange)="changeRba()"> 
 				</div>
-				<div>
+				<div class="tel-vf">
 					<div style="color: red;"><div>R</div>
-						<input type="number" min="0" max="255" class="form" placeholder="12313" [(ngModel)]="rgb_1" (ngModelChange)="changeRba()">
+						<input type="number" min="0" max="255" class="form tel-v" placeholder="12313" [(ngModel)]="rgb_1" (ngModelChange)="changeRba()">
 					</div>
 					<div style="color: green;"><div>G</div>
-						<input type="number" min="0" max="255" class="form" placeholder="12313" [(ngModel)]="rgb_2" (ngModelChange)="changeRba()">
+						<input type="number" min="0" max="255" class="form tel-v" placeholder="12313" [(ngModel)]="rgb_2" (ngModelChange)="changeRba()">
 					</div>
 					<div style="color: blue;"><div>B</div>
-						<input type="number" min="0" max="255" class="form" placeholder="12313" [(ngModel)]="rgb_3" (ngModelChange)="changeRba()">
+						<input type="number" min="0" max="255" class="form tel-v" placeholder="12313" [(ngModel)]="rgb_3" (ngModelChange)="changeRba()">
 					</div>
 				</div>
 			</div>

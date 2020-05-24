@@ -1,0 +1,73 @@
+<div class="work-area" >
+
+	<div class="name" style="margin-bottom: 20px;">
+		Free images
+	</div>
+
+	<div class="images-in">
+		<div style="display: flex;" class="in-s">
+			<div class="choice tel-v" style="margin: 0; width: 250px; margin-right: 10px;">
+				<div [ngStyle]="{ 'color': orientation != 'horizontal' ? '#414141' : '#00BFFF' }"  (click)="changeOri('horizontal');">HORIZONTAL</div>
+				<div></div>
+				<div [ngStyle]="{ 'color': orientation == 'horizontal' ? '#414141' : '#00BFFF' }" (click)="changeOri('vertical');">VERTICAL</div>
+			</div>
+
+			<div>
+				<input type="text" class="form tel-v" placeholder="Search" [(ngModel)]="search" style="height: 30px;" (ngModelChange)="getImages()">
+			</div>
+
+		</div>
+
+		<div style="display: flex;" class="in-s">
+
+			<div class="choice tel-v" style="margin: 0; width: 250px; margin-right: 10px;">
+				<div  (click)="dec_page()">PREV</div>
+				<div></div>
+				<div  (click)="inc_page()">NEXT</div>
+			</div>
+
+			<div class="img-pages">
+				<input type="number" class="form"  max="{{max_pages}}" [(ngModel)]="page" (ngModelChange)="getImages()" style="height: 30px;">
+				<div> / {{max_pages}}</div>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="images">
+
+		<div *ngFor="let image of images" class=items [ngStyle]="{'background': 'url('+image.webformatURL+') no-repeat 50% 50%', 'background-size': 'cover'}"
+		[ngClass]="{'items-1': orientation=='horizontal', 'items-2': orientation!='horizontal'}" [routerLink]="['/image/', image.id ]">
+			<div class="back-text">
+				<div>{{image.tags}}</div>
+				<div>by {{image.user}}</div>
+				<div></div>
+				<fa-icon [icon]="faSearch" class="fa-lg"></fa-icon>
+			</div>
+		</div>
+	</div>
+
+	<div class="images-in" style="margin-top: 20px">
+		<div style="display: flex;">
+
+		</div>
+
+		<div style="display: flex;">
+
+			<div class="choice" style="margin: 0; width: 250px; margin-right: 10px;">
+				<div  (click)="dec_page()">PREV</div>
+				<div></div>
+				<div  (click)="inc_page()">NEXT</div>
+			</div>
+
+			<div class="img-pages">
+				<input type="number" class="form"  max="{{max_pages}}" [(ngModel)]="page" (ngModelChange)="getImages()" style="height: 30px;">
+				<div> / {{max_pages}}</div>
+			</div>
+
+		</div>
+	</div>
+
+</div>
+
+<!-- <div (click)="getImages()">gfdgfdgfd</div> -->
