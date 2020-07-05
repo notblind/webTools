@@ -4,12 +4,12 @@ import { HttpService } from '../services/http.service';
 @Component({
   selector: 'app-fonts',
   templateUrl: './fonts.component.html',
-  styleUrls: ['../style.css']
+  styleUrls: ['../fonts.css', '../style.css']
 })
 export class FontsComponent implements OnInit {
 
   fonts: any;
-  url = 'https://www.googleapis.com/webfonts/v1/webfonts?key=&sort=popularity';
+  url = 'https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyAIRM8oSG6j5jUxo_FTidZN2GuDmjmV41I&sort=popularity';
   f: any;
   searchText: string = '';
   example: string = 'Yesterday, all my troubles seemed so far away, Now it looks as though they’re here to stay,  Mm mm mm mm mm.';
@@ -23,7 +23,7 @@ export class FontsComponent implements OnInit {
   	this.fontsService.get(this.url).then( res => {
   		this.fonts = res.items;
   		this.f = this.fonts[0].files.regular;
-      this.fonts = this.fonts.splice(0,201);
+      this.fonts = this.fonts.splice(0,102);
       // console.info(this.fonts);
   	});
   }

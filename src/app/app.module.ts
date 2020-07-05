@@ -66,7 +66,7 @@ const appRoutes: Routes =[
     // MatMenuModule,
     // MatToolbarModule,
     // MatIconModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes, {useHash: true})
     // MatSelectModule,
     // MatButtonModule
   ],

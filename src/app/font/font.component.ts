@@ -5,11 +5,11 @@ import { HttpService } from '../services/http.service';
 @Component({
   selector: 'app-font',
   templateUrl: './font.component.html',
-  styleUrls: ['../style.css']
+  styleUrls: ['../fonts.css', '../style.css']
 })
 export class FontComponent implements OnInit {
 
-  url = 'https://www.googleapis.com/webfonts/v1/webfonts?key=';
+  url = 'https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyAIRM8oSG6j5jUxo_FTidZN2GuDmjmV41I';
   font_name: string;
   font: any;
   link_url: string = '';
