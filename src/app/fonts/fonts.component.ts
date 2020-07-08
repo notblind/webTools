@@ -9,7 +9,7 @@ import { HttpService } from '../services/http.service';
 export class FontsComponent implements OnInit {
 
   fonts: any;
-  url = 'https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyAIRM8oSG6j5jUxo_FTidZN2GuDmjmV41I&sort=popularity';
+  url = '';
   f: any;
   searchText: string = '';
   example: string = 'Yesterday, all my troubles seemed so far away, Now it looks as though they’re here to stay,  Mm mm mm mm mm.';
