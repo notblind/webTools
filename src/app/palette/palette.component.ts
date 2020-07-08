@@ -12,7 +12,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 //563492ad6f917000010000012a5a845007334e278a961ad3625ecb89
 export class PaletteComponent implements OnInit {
 
-  url: string = 'https://pixabay.com/api/?key=11873174-c12f4530bab32261bf10fb3af&per_page=24&orientation=';
+  url: string = '';
   images: any[] = [];
 
   page: number = 1;
