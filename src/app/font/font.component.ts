@@ -9,7 +9,7 @@ import { HttpService } from '../services/http.service';
 })
 export class FontComponent implements OnInit {
 
-  url = 'https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyAIRM8oSG6j5jUxo_FTidZN2GuDmjmV41I';
+  url = '';
   font_name: string;
   font: any;
   link_url: string = '';
